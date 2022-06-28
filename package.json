@@ -1,0 +1,44 @@
+{
+  "name": "github-contributor",
+  "version": "0.1.0",
+  "description": "github-contributor",
+  "keywords": [
+    "contributor"
+  ],
+  "bin": {
+    "github-contributor": "./bin/contributor"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:billgo/github-contributor.git"
+  },
+  "homepage": "https://github.com/billgo/github-contributor",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "commander": "^2.15.1",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "xutil": "^1.0.11"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-register": "^6.26.0",
+    "co-mocha": "*",
+    "eslint": "*",
+    "eslint-plugin-mocha": "^4.11.0",
+    "mocha": "*",
+    "nyc": "^11.6.0",
+    "pre-commit": "*"
+  },
+  "scripts": {
+    "ci": "npm run lint && npm run test",
+    "test": "nyc --reporter=lcov --reporter=text mocha",
+    "lint": "eslint . --fix",
+    "contributor": "./bin/contributor"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "license": "MIT"
+}
